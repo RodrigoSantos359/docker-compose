@@ -40,11 +40,13 @@ comando na pasta atual.
 
 **IMPORTANTE:** Mas antes de fazer isso, altere os usuários e senhas padrão no arquivo `.env`!
 
-``` docker-compose up -d
+```
+ docker-compose up -d
 ```
 
 Para interromper o processo, execute:
 
-``` docker-compose stop
+```
+ docker-compose stop
 ```
 
