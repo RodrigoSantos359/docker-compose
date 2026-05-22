@@ -92,12 +92,14 @@ Para iniciar o n8n, basta executar o docker-compose com o seguinte comando na pa
 
 **IMPORTANTE:** Mas antes disso, altere os usuários, senhas e tokens padrão no arquivo [`.env`](.env)!
 
-``` docker compose up -d
+```
+ docker compose up -d
 ```
 
 Para interromper o processo, execute:
 
-``` docker compose stop
+```
+ docker compose stop
 ```
 
 ## Configuração
