@@ -30,12 +30,14 @@ x-shared: &shared
     - N8N_DIAGNOSTICS_ENABLED=false
     - N8N_PERSONALIZATION_ENABLED=false
 
-    # IMPORTANTE: corrigido para produção
-    - N8N_HOST=${DOMAIN}
-    - N8N_PROTOCOL=https
-    - WEBHOOK_URL=https://${DOMAIN}:5678/
+    # LOCALHOST CONFIG
+    - N8N_HOST=localhost
+    - N8N_PROTOCOL=http
+    - WEBHOOK_URL=http://localhost:5678/
+
   volumes:
     - n8n_storage:/home/node/.n8n
+
   depends_on:
     redis:
       condition: service_healthy
@@ -80,9 +82,8 @@ services:
 
   n8n:
     <<: *shared
-    # REMOVIDO ports (EasyPanel já faz proxy)
-    # ports:
-    #   - 5678:5678
+    ports:
+      - "5678:5678"
 
   n8n-runner:
     <<: *runner
