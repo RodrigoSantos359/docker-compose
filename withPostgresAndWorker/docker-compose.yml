@@ -33,7 +33,7 @@ x-shared: &shared
     # IMPORTANTE: corrigido para produção
     - N8N_HOST=${DOMAIN}
     - N8N_PROTOCOL=https
-    - WEBHOOK_URL=https://${DOMAIN}/
+    - WEBHOOK_URL=https://${DOMAIN}:5678/
   volumes:
     - n8n_storage:/home/node/.n8n
   depends_on:
