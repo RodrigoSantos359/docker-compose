@@ -17,6 +17,7 @@ x-shared: &shared
     - QUEUE_BULL_REDIS_HOST=redis
     - QUEUE_HEALTH_CHECK_ACTIVE=true
     - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}
+    - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     - N8N_RUNNERS_MODE=external
     - N8N_DIAGNOSTICS_ENABLED=false
     - N8N_PERSONALIZATION_ENABLED=false
@@ -80,6 +81,7 @@ services:
     environment:
       - N8N_RUNNERS_AUTH_TOKEN=${RUNNERS_AUTH_TOKEN}
       - N8N_RUNNERS_TASK_BROKER_URI=http://n8n:5679
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     depends_on:
       - n8n
 
@@ -94,5 +96,6 @@ services:
     environment:
       - N8N_RUNNERS_AUTH_TOKEN=${RUNNERS_AUTH_TOKEN}
       - N8N_RUNNERS_TASK_BROKER_URI=http://n8n-worker:5679
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     depends_on:
       - n8n-worker
